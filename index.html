@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Glenn John M. Padroncillo | BSIT 2B</title>
+
+    <style>
+        /* =====================================================
+           UNIQUE STUDENT PORTFOLIO DESIGN
+           white + Blue Theme
+           ===================================================== */
+
+        :root {
+            --dark: #102a24;
+            --green: #1f6b57;
+            --green-light: #e9f5ef;
+            --gold: #e0ad45;
+            --gold-light: #fff3d6;
+            --cream: #f8faf7;
+            --white: #ffffff;
+            --text: #26332e;
+            --muted: #65736d;
+            --border: #dce6e1;
+            --shadow: 0 12px 30px rgba(16, 42, 36, 0.10);
+            --shadow-hover: 0 18px 40px rgba(16, 42, 36, 0.18);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* =====================================================
+           GENERAL
+           ===================================================== */
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: Georgia, serif;
+        }
+
+        h2 {
+            color: var(--dark);
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        a {
+            color: var(--green);
+            transition: 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--gold);
+        }
+
+        /* =====================================================
+           NAVIGATION
+           ===================================================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: 0 5px 20px rgba(16, 42, 36, 0.06);
+        }
+
+        .nav-container {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            color: var(--dark);
+            text-decoration: none;
+            font-family: Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 9px 15px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: var(--gold-light);
+            color: var(--green);
+            transform: translateY(-2px);
+        }
+
+        /* =====================================================
+           HERO
+           ===================================================== */
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(224, 173, 69, 0.25),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(31, 107, 87, 0.12),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #edf5f1
+                );
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--gold-light);
+            color: #705316;
+            border: 1px solid #ecd38f;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            color: var(--dark);
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--green);
+        }
+
+        .hero-text {
+            color: var(--muted);
+            font-size: 1.08rem;
+            max-width: 700px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--green);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--green-light);
+            transform: translateY(-3px);
+        }
+
+        /* =====================================================
+           ABOUT
+           ===================================================== */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .about-card strong {
+            color: var(--green);
+        }
+
+        /* =====================================================
+           SKILLS & HOBBIES CARDS
+           ===================================================== */
+
+        .section-intro {
+            max-width: 650px;
+            color: var(--muted);
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--green-light);
+            color: var(--green);
+            border-radius: 15px;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .skill-list,
+        .hobby-list {
+            padding-left: 22px;
+        }
+
+        .skill-list li,
+        .hobby-list li {
+            padding: 8px 0;
+        }
+
+        /* =====================================================
+           IMAGE
+           ===================================================== */
+
+        .media-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .photo {
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: auto;
+            border-radius: 15px;
+        }
+
+        figcaption {
+            text-align: center;
+            color: var(--muted);
+            margin-top: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* =====================================================
+           WEBSITE TABLE
+           ===================================================== */
+
+        .table-box {
+            overflow-x: auto;
+            background: var(--white);
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        table {
+            width: 100%;
+            min-width: 650px;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: var(--dark);
+            color: white;
+            text-align: left;
+            padding: 16px;
+        }
+
+        td {
+            padding: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        tr:hover td {
+            background: var(--green-light);
+        }
+
+        /* =====================================================
+           FORM
+           ===================================================== */
+
+        .form-card {
+            max-width: 600px;
+            background: var(--white);
+            padding: 32px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            border: 1px solid #bdcbc4;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(31, 107, 87, 0.12);
+        }
+
+        button {
+            background: var(--green);
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: var(--dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        /* =====================================================
+           VIDEO
+           ===================================================== */
+
+        .video-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            background: #111;
+        }
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        footer {
+            background: var(--dark);
+            color: #dce8e3;
+            padding: 60px 0;
+        }
+
+        footer h2 {
+            color: white;
+        }
+
+        footer a {
+            color: var(--gold-light);
+        }
+
+        footer a:hover {
+            color: var(--gold);
+        }
+
+        address {
+            font-style: normal;
+            color: #b9cbc4;
+        }
+
+        /* =====================================================
+           RESPONSIVE DESIGN
+           ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                padding: 8px 11px;
+            }
+
+            .about-grid,
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 90px 0;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                width: min(100% - 20px, 1100px);
+            }
+
+            .nav-links {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav-links a {
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+                width: 100%;
+            }
+
+            .about-card,
+            .card,
+            .media-card,
+            .form-card,
+            .video-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         TASK 3: NAVIGATION
+         ===================================================== -->
+
+    <nav>
+        <div class="container nav-container">
+
+            <a class="logo" href="#home">
+                Glenn John M. Padroncillo<span>.</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- =====================================================
+         TASK 1: BASIC WEBPAGE STRUCTURE
+         ===================================================== -->
+
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <span class="badge">
+                    BSIT · 2B · Student Portfolio
+                </span>
+
+                <h1>
+                    Hello, I'm
+                    <span>Glenn John</span>.
+                </h1>
+
+                <p class="hero-text">
+                    My name is Glenn John M. Padroncillo, a second-year
+                    Bachelor of Science in Information Technology student
+                    from section 2B. I enjoy learning about technology,
+                    developing my skills, and creating useful projects.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#skills" class="btn btn-primary">
+                        Explore My Skills
+                    </a>
+
+                    <a href="#contact" class="btn btn-secondary">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TASK 2: ABOUT
+         ===================================================== -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <h2>About Me</h2>
+
+            <p class="section-intro">
+                A little information about me as an IT student and
+                what I want to achieve.
+            </p>
+
+            <div class="about-grid">
+
+                <div class="about-card">
+
+                    <h3>Who I Am</h3>
+
+                    <p>
+                        I am <strong>Glenn John M. Padroncillo</strong>,
+                        currently studying Bachelor of Science in
+                        Information Technology, second year, section 2B.
+                    </p>
+
+                    <p>
+                        I am interested in computers, technology,
+                        programming, and web development.
+                    </p>
+
+                </div>
+
+                <div class="about-card">
+
+                    <h3>My Goal</h3>
+
+                    <p>
+                        My goal is to continuously improve my skills
+                        and gain more knowledge in information technology.
+                    </p>
+
+                    <p>
+                        I want to become more confident in creating
+                        websites and solving programming problems.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TASK 4: SKILLS AND HOBBIES
+         ===================================================== -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <h2>Skills & Hobbies</h2>
+
+            <p class="section-intro">
+                These are some of the skills I use in school and
+                some activities I enjoy during my free time.
+            </p>
+
+            <div class="cards">
+
+                <!-- Skills Card -->
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        S
+                    </div>
+
+                    <h3>My Skills</h3>
+
+                    <ul class="skill-list">
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>Time Management</li>
+                    </ul>
+
+                </div>
+
+
+                <!-- Hobbies Card -->
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        H
+                    </div>
+
+                    <h3>My Hobbies</h3>
+
+                    <ol class="hobby-list">
+                        <li>Dancing</li>
+                        <li>Singing</li>
+                        <li>Playing Games</li>
+                    </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TASK 5: IMAGE WITH ALT TEXT
+         ===================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <h2>My Favorite Picture</h2>
+
+            <div class="media-card">
+
+                <figure>
+
+                    <img
+                        class="photo"
+                        src="./favorite-picture.jpeg"
+                        alt="A group of friends spending time together at a gathering"
+                    >
+
+                    <figcaption>
+                        A memorable gathering with friends.
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TASK 6: FAVORITE WEBSITES
+         ===================================================== -->
+
+    <section id="work">
+
+        <div class="container">
+
+            <h2>Websites I Use</h2>
+
+            <p class="section-intro">
+                These are two websites that I frequently use
+                for communication and social interaction.
+            </p>
+
+            <div class="table-box">
+
+                <table>
+
+                    <tr>
+                        <th>Name</th>
+                        <th>URL</th>
+                        <th>Description</th>
+                    </tr>
+
+                    <tr>
+
+                        <td>Facebook</td>
+
+                        <td>
+                            <a
+                                href="https://www.facebook.com"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                facebook.com
+                            </a>
+                        </td>
+
+                        <td>
+                            A social media platform for connecting
+                            with friends and sharing content.
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Messenger</td>
+
+                        <td>
+                            <a
+                                href="https://www.messenger.com"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                messenger.com
+                            </a>
+                        </td>
+
+                        <td>
+                            A messaging platform for communicating
+                            with friends and family.
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TASK 7: SIMPLE FORM
+         ===================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <h2>Send Me a Message</h2>
+
+            <form class="form-card">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label for="color">
+                    Favorite Color
+                </label>
+
+                <select id="color" name="color" required>
+
+                    <option value="">
+                        Choose a color
+                    </option>
+
+                    <option value="red">
+                        Red
+                    </option>
+
+                    <option value="blue">
+                        Blue
+                    </option>
+
+                    <option value="green">
+                        Green
+                    </option>
+
+                </select>
+
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TASK 8: VIDEO
+         ===================================================== -->
+
+    <!-- TASK 8: YouTube Video -->
+<section>
+    <div class="container">
+
+        <h2>Something Worth Watching</h2>
+
+        <div class="video-card">
+
+            <iframe
+                width="100%"
+                height="500"
+                src="https://www.youtube.com/embed/DsRBJAzsGUs"
+                title="My Featured Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- =====================================================
+         TASK 10: FOOTER
+         ===================================================== -->
+
+    <footer id="contact">
+
+        <div class="container">
+
+            <h2>Get in Touch</h2>
+
+            <p>
+                I would be happy to connect with you.
+            </p>
+
+            <p>
+                Email:
+                <a href="mailto:crushsy48@gmail.com">
+                    crushsy48@gmail.com
+                </a>
+            </p>
+
+            <address>
+                Centro Poblacion, Culasi, Antique<br>
+                Phone: 09302025708
+            </address>
+
+            <p>
+                <a
+                    href="https://www.facebook.com/gpadroncillo"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    My LinkedIn Profile
+                </a>
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
